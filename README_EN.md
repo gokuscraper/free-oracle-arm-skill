@@ -3,8 +3,12 @@
 [![简体中文](https://img.shields.io/badge/简体中文-red)](README.md)
 [![English](https://img.shields.io/badge/English-blue)](README_EN.md)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
+[![Free](https://img.shields.io/badge/free-forever-success)](https://github.com/gokuscraper/free-oracle-arm-skill)
+[![AI Agent](https://img.shields.io/badge/AI%20Agent-Skill-orange)](#)
 
 > **Auto-grab Oracle Cloud Free Tier ARM instances.** A complete workflow covering environment setup, OCI CLI configuration, deploying the grabber script, WeChat notification, and post-creation backup & anti-reclaim steps.
+
+---
 
 ## What Is This?
 
@@ -12,15 +16,34 @@ An **AI agent skill** that empowers Claude Code, OpenClaw, Cursor, Codex, Gemini
 
 Oracle Cloud's Always Free tier offers Ampere A1 (ARM) instances, currently at **2 OCPU / 12 GB RAM / 200 GB storage** (new policy since June 2026). Popular regions are often out of capacity, making manual creation nearly impossible.
 
-This skill guides the AI through the complete process:
+---
 
-- Environment check (confirm you have a Linux machine)
-- Install OCI CLI + configure API keys
-- Deploy the auto-retry grabber script (polls every 60s)
-- Configure Server酱 WeChat push notification (optional)
-- Run in background + monitor progress
-- Post-creation setup (backup, firewall, anti-reclaim)
-- Troubleshooting common issues
+## Why Use This Skill Instead of Doing It Manually?
+
+| | Manual (refresh the console) | With This Skill |
+|---|---|---|
+| **Time** | You stare at the screen 24/7 | Submit once, AI runs in background |
+| **Skill required** | OCI console, SSH, Linux | Zero experience needed, AI guides every step |
+| **Success rate** | Can't watch 24/7, miss releases | Auto-retry every 60s, never misses |
+| **Notification** | No way to know when you get one | Server酱 pushes to your WeChat |
+
+---
+
+## How It Works
+
+```
+User provides Oracle region + configuration
+      ↓
+AI guides installing OCI CLI + configuring API keys
+      ↓
+Deploys grab_arm.sh to a Linux server
+      ↓
+Every 60s → OCI API checks capacity → Available? → Create instance → WeChat notification
+                    ↓ Not available
+                Wait 60s, retry
+```
+
+---
 
 ## Why Use This Skill?
 
@@ -115,3 +138,7 @@ No. The script itself is very lightweight — it just calls the OCI API once eve
 ## License
 
 MIT
+
+---
+
+*Keywords: oracle cloud free tier, arm instance grabber, oci arm autograb, oracle always free arm, free oracle vps, image to vector alternative, potrace alternative, auto tracer*

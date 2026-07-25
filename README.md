@@ -3,8 +3,12 @@
 [![简体中文](https://img.shields.io/badge/简体中文-red)](README.md)
 [![English](https://img.shields.io/badge/English-blue)](README_EN.md)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
+[![Free](https://img.shields.io/badge/free-永远免费-success)](https://github.com/gokuscraper/free-oracle-arm-skill)
+[![AI Agent](https://img.shields.io/badge/AI%20Agent-Skill-orange)](#)
 
 > **在 Oracle Cloud Free Tier 上自动抢 ARM 实例。** 引导你完成从环境准备、OCI CLI 配置、部署抢机脚本、微信通知，到抢到后的备份与防回收的全流程。
+
+---
 
 ## 这是什么？
 
@@ -12,15 +16,36 @@
 
 Oracle Cloud 的 Always Free 层提供 Ampere A1（ARM）实例，目前免费额度为 **2 OCPU / 12 GB 内存 / 200 GB 存储**（2026年6月起新政策）。由于热门区域资源紧张，手动创建经常会遇到 `Out of host capacity`。
 
-这个 skill 会引导 AI 一步步完成抢机全流程：
+---
 
-- 环境检测（确认有可用的 Linux 机器）
-- 安装 OCI CLI + 配置 API 密钥
-- 部署自动抢机脚本（每60秒重试）
-- 配置 Server酱 微信通知（抢到自动推送）
-- 后台运行 + 查看进度
-- 抢到后的备份、防火墙、防回收处理
-- 常见故障排查
+## 为什么用 Skill 而不是手动抢？
+
+| | 手动刷新网页 | 用这个 Skill |
+|---|---|---|
+| **耗时** | 需要盯着屏幕，24小时不敢关机 | 提交一次，AI 在后台自动跑 |
+| **技术要求** | 需要懂 OCI 控制台、SSH、Linux | 零基础，AI 每一步带着操作 |
+| **成功率** | 人不可能24小时守着，错过释放 | 每60秒自动重试，不放过任何机会 |
+| **通知** | 不知道什么时候抢到了 | 抢到后 Server酱 推送微信 |
+
+---
+
+## 工作原理
+
+```
+用户提供 Oracle 区域 + 配置信息
+      ↓
+AI 引导安装 OCI CLI + 配置 API 密钥
+      ↓
+部署 grab_arm.sh 到 Linux 服务器
+      ↓
+每 60 秒 → OCI API 查询可用容量 → 有？→ 创建实例 → Server酱 推送到微信
+                ↓ 无
+            等待 60 秒后重试
+```
+
+整个过程完全自动化，AI 会告诉你每一步的命令和操作。
+
+---
 
 ## 为什么使用这个 Skill？
 
@@ -115,3 +140,7 @@ Oracle 可能会回收长期空闲的 ARM 实例。脚本内置了轻量 CPU 占
 ## License
 
 MIT
+
+---
+
+*Keywords: oracle cloud free tier arm instance grabber, 甲骨文免费ARM实例, 甲骨文云抢机, oci arm autograb, oracle always free arm script, AI skill oracle cloud, 甲骨文ARM脚本, free oracle vps grabber*
