@@ -12,11 +12,17 @@
 
 ## What Is This?
 
-![Grabber script running, auto-polling every 60s](assets/terminal-screenshot.jpg)
-*The grabber script running on a Linux server, retrying every 60 seconds*
+<p align="center">
+  <img src="assets/terminal-screenshot.jpg" alt="Grabber script running, auto-polling every 60s">
+  <br>
+  <em>The grabber script running on a Linux server, retrying every 60 seconds</em>
+</p>
 
-![Server酱 WeChat push notification](assets/wechat-notification.jpg)
-*Real-time WeChat notification when an instance is created*
+<p align="center">
+  <img src="assets/wechat-notification.jpg" alt="Server酱 WeChat push notification">
+  <br>
+  <em>Real-time WeChat notification when an instance is created</em>
+</p>
 
 An **AI agent skill** that empowers Claude Code, OpenClaw, Cursor, Codex, Gemini CLI, and other AI assistants with the ability to automatically grab Oracle Cloud Free Tier ARM instances.
 

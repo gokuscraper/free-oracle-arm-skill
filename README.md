@@ -12,11 +12,17 @@
 
 ## 这是什么？
 
-![抢机脚本运行中，每60秒自动轮询](assets/terminal-screenshot.jpg)
-*抢机脚本自动运行，每60秒轮询一次，直到抢到为止*
+<p align="center">
+  <img src="assets/terminal-screenshot.jpg" alt="抢机脚本运行中，每60秒自动轮询">
+  <br>
+  <em>抢机脚本自动运行，每60秒轮询一次，直到抢到为止</em>
+</p>
 
-![Server酱微信推送通知](assets/wechat-notification.jpg)
-*抢到后通过 Server酱 实时推送到微信*
+<p align="center">
+  <img src="assets/wechat-notification.jpg" alt="Server酱微信推送通知">
+  <br>
+  <em>抢到后通过 Server酱 实时推送到微信</em>
+</p>
 
 一个 **AI agent skill**，让 Claude Code、OpenClaw、Cursor、Codex、Gemini CLI 等 AI 助手具备自动抢 Oracle Cloud 免费 ARM 实例的能力。
 
