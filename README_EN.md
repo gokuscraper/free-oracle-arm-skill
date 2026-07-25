@@ -128,21 +128,27 @@ free-oracle-arm-skill/
 ## FAQ
 
 **Q: Do I need a Linux machine to use this?**
+
 Yes. The grabber script needs to run continuously on a Linux server (polls every 60s). But if you don't have one, the AI will guide you through setting it up on your free Oracle E2.1.Micro instance.
 
 **Q: Do I need OCI CLI installed?**
+
 The AI will guide you through installation and configuration. Nothing to prepare in advance.
 
 **Q: I know nothing about Linux or SSH. Can I still use this?**
+
 Absolutely. This skill is designed for beginners. The AI will walk you through every command and every step.
 
 **Q: How long does it take to grab an instance?**
+
 It varies. Popular regions (Osaka, Seoul) may take days or weeks. Less popular regions may succeed in minutes. The script keeps retrying until it succeeds.
 
 **Q: Will Oracle reclaim my ARM instance?**
+
 Oracle may reclaim long-idle ARM instances. The script includes a light CPU load feature to reduce the risk of reclaim.
 
 **Q: Does the grabber script consume a lot of resources?**
+
 No. The script itself is very lightweight — it just calls the OCI API once every 60 seconds. The CPU load script is also very light.
 
 ---
