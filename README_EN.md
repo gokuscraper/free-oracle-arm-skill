@@ -1,6 +1,6 @@
 # Free Oracle ARM Skill
 
-[![¼òÌåÖĞÎÄ](https://img.shields.io/badge/¼òÌåÖĞÎÄ-red)](README.md)
+[![ç®€ä½“ä¸­æ–‡](https://img.shields.io/badge/ç®€ä½“ä¸­æ–‡-red)](README.md)
 [![English](https://img.shields.io/badge/English-blue)](README_EN.md)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 
@@ -17,18 +17,18 @@ This skill guides the AI through the complete process:
 - Environment check (confirm you have a Linux machine)
 - Install OCI CLI + configure API keys
 - Deploy the auto-retry grabber script (polls every 60s)
-- Configure Server½´ WeChat push notification (optional)
+- Configure Serveré…± WeChat push notification (optional)
 - Run in background + monitor progress
 - Post-creation setup (backup, firewall, anti-reclaim)
 - Troubleshooting common issues
 
 ## Why Use This Skill?
 
-- ? **Fully automated** ¡ª AI guides you step by step, no need to research docs manually
-- ? **60s polling** ¡ª Retries automatically every 60 seconds, never misses released capacity
-- ? **WeChat notification** ¡ª Real-time push via Server½´ when you get an instance
-- ? **Anti-reclaim** ¡ª Built-in light CPU load to reduce risk of Oracle reclaiming your instance
-- ? **Beginner friendly** ¡ª No SSH or Linux experience needed, AI holds your hand the whole way
+- âœ… **Fully automated** â€” AI guides you step by step, no need to research docs manually
+- âœ… **60s polling** â€” Retries automatically every 60 seconds, never misses released capacity
+- âœ… **WeChat notification** â€” Real-time push via Serveré…± when you get an instance
+- âœ… **Anti-reclaim** â€” Built-in light CPU load to reduce risk of Oracle reclaiming your instance
+- âœ… **Beginner friendly** â€” No SSH or Linux experience needed, AI holds your hand the whole way
 
 ---
 
@@ -53,7 +53,7 @@ npx skills i gokuscraper/free-oracle-arm-skill
 ### Other AI Assistants (Cursor, Codex, Gemini CLI, Windsurf)
 
 ```bash
-# Universal installer ¡ª auto-detects your AI assistant
+# Universal installer â€” auto-detects your AI assistant
 npx skills i gokuscraper/free-oracle-arm-skill
 ```
 
@@ -83,11 +83,11 @@ After loading the skill, the AI will guide you through the process. Just follow 
 
 ```
 free-oracle-arm-skill/
-©À©¤©¤ SKILL.md              ¡û AI instruction file
-©À©¤©¤ README.md             ¡û Chinese README
-©À©¤©¤ README_EN.md          ¡û English README
-©¸©¤©¤ scripts/
-    ©¸©¤©¤ grab_arm.sh       ¡û Grabber script (ready to use)
+â”œâ”€â”€ SKILL.md              â† AI instruction file
+â”œâ”€â”€ README.md             â† Chinese README
+â”œâ”€â”€ README_EN.md          â† English README
+â””â”€â”€ scripts/
+    â””â”€â”€ grab_arm.sh       â† Grabber script (ready to use)
 ```
 
 ## FAQ
@@ -108,7 +108,7 @@ It varies. Popular regions (Osaka, Seoul) may take days or weeks. Less popular r
 Oracle may reclaim long-idle ARM instances. The script includes a light CPU load feature to reduce the risk of reclaim.
 
 **Q: Does the grabber script consume a lot of resources?**
-No. The script itself is very lightweight ¡ª it just calls the OCI API once every 60 seconds. The CPU load script is also very light.
+No. The script itself is very lightweight â€” it just calls the OCI API once every 60 seconds. The CPU load script is also very light.
 
 ---
 
