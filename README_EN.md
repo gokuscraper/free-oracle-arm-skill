@@ -1,13 +1,14 @@
 # Free Oracle ARM Skill
 
-[![ç®€ä½“ä¸­æ–‡](https://img.shields.io/badge/ç®€ä½“ä¸­æ–‡-red)](README.md)
+[![¼òÌåÖĞÎÄ](https://img.shields.io/badge/¼òÌåÖĞÎÄ-red)](README.md)
 [![English](https://img.shields.io/badge/English-blue)](README_EN.md)
+[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 
 > **Auto-grab Oracle Cloud Free Tier ARM instances.** A complete workflow covering environment setup, OCI CLI configuration, deploying the grabber script, WeChat notification, and post-creation backup & anti-reclaim steps.
 
 ## What Is This?
 
-An **AI agent skill** that empowers Claude Code, Cursor, OpenClaw, and other AI assistants with the ability to automatically grab Oracle Cloud Free Tier ARM instances.
+An **AI agent skill** that empowers Claude Code, OpenClaw, Cursor, Codex, Gemini CLI, and other AI assistants with the ability to automatically grab Oracle Cloud Free Tier ARM instances.
 
 Oracle Cloud's Always Free tier offers Ampere A1 (ARM) instances, currently at **2 OCPU / 12 GB RAM / 200 GB storage** (new policy since June 2026). Popular regions are often out of capacity, making manual creation nearly impossible.
 
@@ -16,12 +17,32 @@ This skill guides the AI through the complete process:
 - Environment check (confirm you have a Linux machine)
 - Install OCI CLI + configure API keys
 - Deploy the auto-retry grabber script (polls every 60s)
-- Configure Serveré…± WeChat push notification (optional)
+- Configure Server½´ WeChat push notification (optional)
 - Run in background + monitor progress
 - Post-creation setup (backup, firewall, anti-reclaim)
 - Troubleshooting common issues
 
+## Why Use This Skill?
+
+- ? **Fully automated** ¡ª AI guides you step by step, no need to research docs manually
+- ? **60s polling** ¡ª Retries automatically every 60 seconds, never misses released capacity
+- ? **WeChat notification** ¡ª Real-time push via Server½´ when you get an instance
+- ? **Anti-reclaim** ¡ª Built-in light CPU load to reduce risk of Oracle reclaiming your instance
+- ? **Beginner friendly** ¡ª No SSH or Linux experience needed, AI holds your hand the whole way
+
+---
+
 ## Installation
+
+### OpenClaw (Recommended)
+
+```bash
+clawhub install free-oracle-arm-skill
+```
+
+Or search inside OpenClaw chat:
+
+> "Install the free oracle arm skill from clawhub"
 
 ### Claude Code
 
@@ -29,36 +50,67 @@ This skill guides the AI through the complete process:
 npx skills i gokuscraper/free-oracle-arm-skill
 ```
 
+### Other AI Assistants (Cursor, Codex, Gemini CLI, Windsurf)
+
+```bash
+# Universal installer ¡ª auto-detects your AI assistant
+npx skills i gokuscraper/free-oracle-arm-skill
+```
+
+### openskills
+
+```bash
+npx openskills install gokuscraper/free-oracle-arm-skill
+```
+
 ### Manual
 
 Place the `free-oracle-arm-skill/` directory into your project's `.agents/skills/` folder.
 
+---
+
 ## How to Use
 
-After loading the skill, the AI will guide you through the process. Just follow the prompts and provide the requested information.
+After loading the skill, the AI will guide you through the process. Just follow the prompts and provide the requested information. **Even if you know nothing about Linux or SSH, the AI will tell you exactly what to do at every step.**
 
 ## Prerequisites
 
-- An [Oracle Cloud Free Tier](https://www.oracle.com/cloud/free/) account
-- A Linux machine accessible via SSH (your free E2.1.Micro instance works)
-- Basic SSH knowledge
+- An [Oracle Cloud Free Tier](https://www.oracle.com/cloud/free/) account (free to sign up)
+
+> No technical background required. Don't have a Linux machine? The AI will guide you through using your free Oracle E2.1.Micro instance. Don't know SSH? The AI will teach you. Everything from scratch.
 
 ## Project Structure
 
 ```
 free-oracle-arm-skill/
-â”œâ”€â”€ SKILL.md              â† AI instruction file
-â”œâ”€â”€ README.md             â† Chinese README
-â”œâ”€â”€ README_EN.md          â† English README
-â””â”€â”€ scripts/
-    â””â”€â”€ grab_arm.sh       â† Grabber script (ready to use)
+©À©¤©¤ SKILL.md              ¡û AI instruction file
+©À©¤©¤ README.md             ¡û Chinese README
+©À©¤©¤ README_EN.md          ¡û English README
+©¸©¤©¤ scripts/
+    ©¸©¤©¤ grab_arm.sh       ¡û Grabber script (ready to use)
 ```
 
-## Related
+## FAQ
 
-- [Oracle Cloud Free Tier](https://www.oracle.com/cloud/free/) â€” Oracle Cloud free tier
-- [Serveré…±](https://sct.ftqq.com/) â€” WeChat push notification service
-- [oci-arm-host-capacity](https://github.com/hitrov/oci-arm-host-capacity) â€” PHP-based grabber (1285 â­)
+**Q: Do I need a Linux machine to use this?**
+Yes. The grabber script needs to run continuously on a Linux server (polls every 60s). But if you don't have one, the AI will guide you through setting it up on your free Oracle E2.1.Micro instance.
+
+**Q: Do I need OCI CLI installed?**
+The AI will guide you through installation and configuration. Nothing to prepare in advance.
+
+**Q: I know nothing about Linux or SSH. Can I still use this?**
+Absolutely. This skill is designed for beginners. The AI will walk you through every command and every step.
+
+**Q: How long does it take to grab an instance?**
+It varies. Popular regions (Osaka, Seoul) may take days or weeks. Less popular regions may succeed in minutes. The script keeps retrying until it succeeds.
+
+**Q: Will Oracle reclaim my ARM instance?**
+Oracle may reclaim long-idle ARM instances. The script includes a light CPU load feature to reduce the risk of reclaim.
+
+**Q: Does the grabber script consume a lot of resources?**
+No. The script itself is very lightweight ¡ª it just calls the OCI API once every 60 seconds. The CPU load script is also very light.
+
+---
 
 ## License
 
