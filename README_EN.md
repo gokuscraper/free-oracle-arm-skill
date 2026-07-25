@@ -12,6 +12,12 @@
 
 ## What Is This?
 
+![Grabber script running, auto-polling every 60s](assets/terminal-screenshot.jpg)
+*The grabber script running on a Linux server, retrying every 60 seconds*
+
+![Server酱 WeChat push notification](assets/wechat-notification.jpg)
+*Real-time WeChat notification when an instance is created*
+
 An **AI agent skill** that empowers Claude Code, OpenClaw, Cursor, Codex, Gemini CLI, and other AI assistants with the ability to automatically grab Oracle Cloud Free Tier ARM instances.
 
 Oracle Cloud's Always Free tier offers Ampere A1 (ARM) instances, currently at **2 OCPU / 12 GB RAM / 200 GB storage** (new policy since June 2026). Popular regions are often out of capacity, making manual creation nearly impossible.

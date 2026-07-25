@@ -12,6 +12,12 @@
 
 ## 这是什么？
 
+![抢机脚本运行中，每60秒自动轮询](assets/terminal-screenshot.jpg)
+*抢机脚本自动运行，每60秒轮询一次，直到抢到为止*
+
+![Server酱微信推送通知](assets/wechat-notification.jpg)
+*抢到后通过 Server酱 实时推送到微信*
+
 一个 **AI agent skill**，让 Claude Code、OpenClaw、Cursor、Codex、Gemini CLI 等 AI 助手具备自动抢 Oracle Cloud 免费 ARM 实例的能力。
 
 Oracle Cloud 的 Always Free 层提供 Ampere A1（ARM）实例，目前免费额度为 **2 OCPU / 12 GB 内存 / 200 GB 存储**（2026年6月起新政策）。由于热门区域资源紧张，手动创建经常会遇到 `Out of host capacity`。
